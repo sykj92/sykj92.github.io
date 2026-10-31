@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#d9ff3f">
+  <meta name="theme-color" content="#f2f1f4">
   <meta name="description" content="{{ site.description }}">
   <title>{{ page.title }} — {{ site.title }}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,10 +13,10 @@
 </head>
 <body>
   {% include header.html %}
-  <main class="page wrap">
-    {{ content }}
+  <main class="page wrap resume-layout">
+    <aside class="resume-sidebar">{% include profile.html %}</aside>
+    <div class="resume-content">{{ content }}</div>
   </main>
   {% include footer.html %}
-  <script src="{{ '/script.js' | relative_url }}" defer></script>
 </body>
 </html>
