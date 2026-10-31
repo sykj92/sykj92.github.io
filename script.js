@@ -13,4 +13,3 @@ navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', ()
   menuButton.setAttribute('aria-label', 'Open menu');
 }));
 
-document.querySelector('#year').textContent = new Date().getFullYear();

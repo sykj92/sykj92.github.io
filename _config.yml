@@ -1,2 +1,8 @@
-title: Your Name — Curriculum Vitae
-description: Professional profile, experience, education, and skills for Your Name.
+title: Curriculum Vitae
+description: A professional introduction, experience, education, and skills.
+lang: en
+author:
+  name: Your Name
+  role: "[your profession or area of study]"
+  location: Your City
+  email: hello@example.com

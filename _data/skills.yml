@@ -1,0 +1,16 @@
+- name: "Professional"
+  items:
+    - "[Skill or tool]"
+    - "[Skill or tool]"
+    - "[Skill or tool]"
+    - "[Skill or tool]"
+- name: "Ways of working"
+  items:
+    - "Communication"
+    - "Problem solving"
+    - "Collaboration"
+    - "Adaptability"
+- name: "Languages"
+  items:
+    - "[Language] — [Level]"
+    - "[Language] — [Level]"

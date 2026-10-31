@@ -1,46 +1,45 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f5f0">
-  <meta name="description" content="Curriculum vitae and professional introduction for Your Name.">
-  <title>Your Name — Curriculum Vitae</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <nav class="nav wrap" aria-label="Main navigation">
-      <a class="brand" href="#home">Your Name<span>.</span></a>
-      <button class="menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><svg width="22" height="18" viewBox="0 0 22 18" fill="none" aria-hidden="true"><path d="M1 2h20M1 9h20M1 16h20" stroke="currentColor" stroke-width="1.5"/></svg></button>
-      <div class="nav-links" id="nav-links">
-        <a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#skills">Skills</a><a class="contact-link" href="mailto:hello@example.com">Get in touch <span class="arrow">↗</span></a>
+---
+layout: default
+title: Profile
+---
+
+<section class="intro" id="profile">
+  <p class="overline">Curriculum vitae <span>·</span> {{ site.author.location }}</p>
+  <h1>Thoughtful work.<br><em>Good people.</em></h1>
+  <div class="intro-bottom">
+    <p class="intro-copy">Hello, I’m <strong>{{ site.author.name }}</strong>, a {{ site.author.role }}. I bring curiosity, care, and a practical approach to the work I do.</p>
+    <a class="text-link" href="mailto:{{ site.author.email }}">Get in touch <span>↗</span></a>
+  </div>
+</section>
+
+<section class="content-section" id="experience">
+  <div class="section-heading"><span class="section-number">01</span><div><p class="overline">Where I’ve been</p><h2>Experience</h2></div></div>
+  <div class="entries">
+    {% for item in site.data.experience %}
+    <article class="entry">
+      <p class="entry-date">{{ item.dates }}</p>
+      <div class="entry-content"><h3>{{ item.role }}</h3><p class="entry-org">{{ item.company }} <span>·</span> {{ item.location }}</p><p class="entry-description">{{ item.description }}</p>
+        {% if item.highlights %}<ul>{% for highlight in item.highlights %}<li>{{ highlight }}</li>{% endfor %}</ul>{% endif %}
       </div>
-    </nav>
-  </header>
-  <main id="home">
-    <section class="cv-hero" id="profile">
-      <div class="wrap cv-hero-grid">
-        <div><div class="eyebrow">Curriculum vitae · Your City</div><h1>Hello, I’m<br><em>Your Name.</em></h1><p class="hero-copy">I’m a <strong>[your profession / area of study]</strong> with experience in <strong>[your key strengths]</strong>. I enjoy solving meaningful problems, learning continuously, and working with people who care about what they do.</p><div class="hero-actions"><a class="button button-dark" href="mailto:hello@example.com">Contact me <span class="arrow">↗</span></a><a class="button button-plain" href="#experience">View my experience <span class="arrow">↓</span></a></div></div>
-        <aside class="cv-card"><div class="cv-monogram">YN</div><div class="cv-card-name">Your Name</div><div class="cv-card-role">[Your professional title]</div><div class="cv-card-rule"></div><div class="cv-detail"><span>Location</span><span>Your City, Country</span></div><div class="cv-detail"><span>Email</span><a href="mailto:hello@example.com">hello@example.com</a></div><div class="cv-detail"><span>LinkedIn</span><a href="https://www.linkedin.com/">linkedin.com/in/yourname ↗</a></div><div class="cv-detail"><span>Website</span><a href="https://github.com/">github.com/yourname ↗</a></div></aside>
-      </div>
-    </section>
-    <section class="section cv-section" id="experience"><div class="wrap cv-grid"><div class="cv-section-title"><div class="section-kicker">01 / Career</div><h2>Experience</h2><p class="section-intro">A snapshot of where I’ve worked and the contributions I’ve made.</p></div><div class="timeline">
-      <article class="timeline-entry"><div class="timeline-date">[Year] — Present</div><div><h3>[Most recent job title]</h3><div class="entry-org">[Company or organization] · [Location]</div><p>Describe your role, the work you led, and the value you brought to your team or clients. Add one or two specific outcomes where you can.</p><ul><li>[Key achievement or responsibility]</li><li>[Another measurable contribution]</li></ul></div></article>
-      <article class="timeline-entry"><div class="timeline-date">[Year] — [Year]</div><div><h3>[Previous job title]</h3><div class="entry-org">[Company or organization] · [Location]</div><p>Summarize your main responsibilities and the skills you developed in this role.</p><ul><li>[Key achievement or responsibility]</li><li>[Another contribution]</li></ul></div></article>
-      <article class="timeline-entry"><div class="timeline-date">[Year] — [Year]</div><div><h3>[Earlier role or internship]</h3><div class="entry-org">[Company or organization] · [Location]</div><p>Add an earlier position, internship, volunteer role, or relevant career experience.</p></div></article>
-    </div></div></section>
-    <section class="section cv-section" id="education"><div class="wrap cv-grid"><div class="cv-section-title"><div class="section-kicker">02 / Learning</div><h2>Education</h2><p class="section-intro">Formal education and the ongoing learning that shapes my work.</p></div><div class="timeline">
-      <article class="timeline-entry"><div class="timeline-date">[Year] — [Year]</div><div><h3>[Degree or qualification]</h3><div class="entry-org">[School or university] · [Location]</div><p>[Optional focus, honors, thesis, or relevant coursework.]</p></div></article>
-      <article class="timeline-entry"><div class="timeline-date">[Year]</div><div><h3>[Course or certification]</h3><div class="entry-org">[Provider or institution]</div><p>[A short note about a relevant area of professional development.]</p></div></article>
-    </div></div></section>
-    <section class="section cv-section" id="skills"><div class="wrap cv-grid"><div class="cv-section-title"><div class="section-kicker">03 / What I bring</div><h2>Skills &<br>strengths</h2></div><div class="skills-grid"><div class="skill-group"><h3>Professional skills</h3><div class="skill-tags"><span>[Skill or tool]</span><span>[Skill or tool]</span><span>[Skill or tool]</span><span>[Skill or tool]</span><span>[Skill or tool]</span></div></div><div class="skill-group"><h3>Ways of working</h3><div class="skill-tags"><span>Communication</span><span>Problem solving</span><span>Collaboration</span><span>Adaptability</span></div></div><div class="skill-group"><h3>Languages</h3><div class="language-list"><div><span>[Language]</span><span>[Level]</span></div><div><span>[Language]</span><span>[Level]</span></div></div></div></div></div></section>
-    <section class="section contact-section" id="contact"><div class="wrap contact-card"><div><div class="section-kicker">04 / Get in touch</div><h2>Let’s start<br>a conversation.</h2><p>I’m happy to talk about opportunities, collaboration, or just share more about my experience.</p></div><a class="button button-dark" href="mailto:hello@example.com">hello@example.com <span class="arrow">↗</span></a></div></section>
-  </main>
-  <footer><div class="wrap footer-row"><span>© <span id="year"></span> Your Name · Curriculum Vitae</span><div class="socials"><a href="https://www.linkedin.com/">LinkedIn ↗</a><a href="#home">Back to top ↑</a></div></div></footer>
-  <script src="script.js" defer></script>
-</body>
-</html>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="content-section" id="education">
+  <div class="section-heading"><span class="section-number">02</span><div><p class="overline">A curious mind</p><h2>Education</h2></div></div>
+  <div class="entries">
+    {% for item in site.data.education %}
+    <article class="entry"><p class="entry-date">{{ item.dates }}</p><div class="entry-content"><h3>{{ item.qualification }}</h3><p class="entry-org">{{ item.institution }} <span>·</span> {{ item.location }}</p><p class="entry-description">{{ item.description }}</p></div></article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="content-section skills-section" id="skills">
+  <div class="section-heading"><span class="section-number">03</span><div><p class="overline">Things I bring</p><h2>Skills & interests</h2></div></div>
+  <div class="skills-layout">
+    {% for group in site.data.skills %}<div class="skill-group"><h3>{{ group.name }}</h3><ul>{% for skill in group.items %}<li>{{ skill }}</li>{% endfor %}</ul></div>{% endfor %}
+  </div>
+</section>
+
+<section class="contact" id="contact"><p class="overline">Have something in mind?</p><h2>Let’s make<br>good things happen.</h2><a class="contact-link" href="mailto:{{ site.author.email }}">{{ site.author.email }} <span>↗</span></a></section>
