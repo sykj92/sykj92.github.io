@@ -1,43 +1,21 @@
----
-layout: default
-title: Profile
----
-
-<section class="intro" id="profile">
-  <p class="overline">01 <span>—</span> Professional summary</p>
-  <h2>A little about my approach</h2>
-  <p class="intro-copy">Based in {{ site.author.location }}, I’m focused on thoughtful work, continuous learning, and making a useful contribution to every team I join. I bring curiosity, care, and a practical approach to the work I do.</p>
-</section>
-
-<section class="content-section" id="experience">
-  <div class="section-heading"><span class="section-number">02</span><div><p class="overline">Where I’ve been</p><h2>Experience</h2></div></div>
-  <div class="entries">
-    {% for item in site.data.experience %}
-    <article class="entry">
-      <p class="entry-date">{{ item.dates }}</p>
-      <div class="entry-content"><h3>{{ item.role }}</h3><p class="entry-org">{{ item.company }} <span>·</span> {{ item.location }}</p><p class="entry-description">{{ item.description }}</p>
-        {% if item.highlights %}<ul>{% for highlight in item.highlights %}<li>{{ highlight }}</li>{% endfor %}</ul>{% endif %}
-      </div>
-    </article>
-    {% endfor %}
-  </div>
-</section>
-
-<div class="details-grid">
-<section class="content-section" id="education">
-  <div class="section-heading"><span class="section-number">03</span><div><p class="overline">A curious mind</p><h2>Education</h2></div></div>
-  <div class="entries">
-    {% for item in site.data.education %}
-    <article class="entry"><p class="entry-date">{{ item.dates }}</p><div class="entry-content"><h3>{{ item.qualification }}</h3><p class="entry-org">{{ item.institution }} <span>·</span> {{ item.location }}</p><p class="entry-description">{{ item.description }}</p></div></article>
-    {% endfor %}
-  </div>
-</section>
-
-<section class="content-section skills-section" id="skills">
-  <div class="section-heading"><span class="section-number">04</span><div><p class="overline">Things I bring</p><h2>Skills & interests</h2></div></div>
-  <div class="skills-layout">
-    {% for group in site.data.skills %}<div class="skill-group"><h3>{{ group.name }}</h3><ul>{% for skill in group.items %}<li>{{ skill }}</li>{% endfor %}</ul></div>{% endfor %}
-  </div>
-</section>
-</div>
-
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Website is up</title>
+  <style>
+    body { min-height:100vh; margin:0; display:grid; place-items:center; background:#fff; color:#333; font:16px/1.5 system-ui,sans-serif; }
+    main { padding:24px; text-align:center; }
+    h1 { margin:0; font-size:clamp(28px,6vw,44px); font-weight:600; letter-spacing:-.04em; }
+    p { margin:10px 0 0; color:#777; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>The website is up.</h1>
+    <p>Thanks for stopping by.</p>
+  </main>
+</body>
+</html>
