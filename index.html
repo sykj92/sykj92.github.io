@@ -23,6 +23,7 @@ title: Profile
   </div>
 </section>
 
+<div class="details-grid">
 <section class="content-section" id="education">
   <div class="section-heading"><span class="section-number">03</span><div><p class="overline">A curious mind</p><h2>Education</h2></div></div>
   <div class="entries">
@@ -38,4 +39,5 @@ title: Profile
     {% for group in site.data.skills %}<div class="skill-group"><h3>{{ group.name }}</h3><ul>{% for skill in group.items %}<li>{{ skill }}</li>{% endfor %}</ul></div>{% endfor %}
   </div>
 </section>
+</div>
 
