@@ -13,8 +13,8 @@
 </head>
 <body>
   {% include header.html %}
-  <main class="page wrap resume-layout">
-    <aside class="resume-sidebar">{% include profile.html %}</aside>
+  <main class="page wrap">
+    {% include profile.html %}
     <div class="resume-content">{{ content }}</div>
   </main>
   {% include footer.html %}

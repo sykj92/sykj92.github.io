@@ -1,7 +1,5 @@
-<div class="profile-card">
-  <div class="profile-top"><span class="profile-mark">{{ site.author.name | slice: 0 }}</span><span class="profile-status"><i></i> PROFILE</span></div>
-  <h1>{{ site.author.name }}</h1>
-  <p class="profile-role">{{ site.author.role }}</p>
+<section class="profile-card" aria-label="Quick profile information">
+  <div class="profile-identity"><span class="profile-mark">{{ site.author.name | slice: 0 }}</span><div><h1>{{ site.author.name }}</h1><p class="profile-role">{{ site.author.role }}</p></div></div>
   <div class="profile-meta"><div><span>LOCATION</span><p>{{ site.author.location }}</p></div><div><span>EMAIL</span><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></div></div>
-  <a class="sidebar-contact" href="mailto:{{ site.author.email }}">Get in touch <span>↗</span></a>
-</div>
+  <a class="profile-contact" href="mailto:{{ site.author.email }}">Get in touch <span>↗</span></a>
+</section>
